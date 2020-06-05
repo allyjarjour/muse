@@ -20,6 +20,9 @@ export const NavBar = () => {
         <NavLink to="/location" activeClassName="active-page">
           <p>Location</p>
         </NavLink>
+        <NavLink to="/favorites" activeClassName="active-page">
+          <p>Favorites</p>
+        </NavLink>
       </div>
     </header>
   );
