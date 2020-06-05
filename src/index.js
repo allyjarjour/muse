@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import { StoreProvider } from "./store";
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
-  <StoreProvider>
-    <App />
-  </StoreProvider>,
-  document.getElementById('root')
+  <React.StrictMode>
+    <Router>
+      <StoreProvider>
+        <App />
+      </StoreProvider>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 serviceWorker.unregister();

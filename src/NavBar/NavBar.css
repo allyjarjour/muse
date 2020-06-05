@@ -1,0 +1,47 @@
+header h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-transform: uppercase;
+  color: white;
+  width: 20%;
+  display: inline-block;
+}
+
+header {
+  padding: 10px;
+  background-color: black;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle, header p {
+  color: white;
+}
+
+.nav-btn-container {
+  justify-content: space-between;
+  width: 27%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-page {
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-weight: bold;
+}
+
+@media all and (min-width: 600px) {
+  .nav-btn-container {
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 45px;
+  }
+
+}
