@@ -11,7 +11,7 @@ export const NavBar = () => {
         <p className="subtitle">inspiration from the Met</p>
       </div>
       <div className="nav-btn-container">
-        <NavLink to="/daily_curation" activeClassName="active-page">
+        <NavLink exact to="/" activeClassName="active-page">
           <p>Daily Curation</p>
         </NavLink>
         <NavLink to="/medium" activeClassName="active-page">
