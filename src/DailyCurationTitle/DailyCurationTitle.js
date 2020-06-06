@@ -16,7 +16,7 @@ export const DailyCurationTitle = () => {
         Explore a collection of art chosen around a daily theme. Today find
         inspiration through
       </p>
-      <h1>{state.dailyCurationTopic}</h1>
+      <h1>{state.dailyCurationTopic}s</h1>
     </div>
   );
 }

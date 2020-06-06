@@ -1,5 +1,10 @@
 .daily-curation-title {
-  margin: 20px auto;
+  margin: 50px auto 10px auto;
   width: 50%;
   text-align: center;
+}
+
+.daily-curation-title h1 {
+  text-transform: uppercase;
+  margin-top: 10px;
 }

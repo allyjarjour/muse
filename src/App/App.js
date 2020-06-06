@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStore } from "../store";
 import './App.css';
 import { NavBar } from '../NavBar/NavBar'
 import { Switch, Route } from "react-router-dom";

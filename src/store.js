@@ -4,7 +4,7 @@ import { getDailyCollectionIds, getDailyCollection } from "./apiCalls";
 
 const StoreContext = createContext();
 const initialState = {
-  dailyCurationTopics: ["sunflower", "rose"],
+  dailyCurationTopics: ["sunflower"],
   dailyCurationTopic: '',
 };
 

@@ -1,34 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './DailyCuration.css'
 import { getDailyCollectionIds, getDailyCollection } from '../apiCalls'
 import { useStore } from "../store";
-
-
+import { ArtWorkPreview } from "../ArtWorkPreview/ArtWorkPreview";
 
 export const DailyCuration = () => {
-  const { state, dispatch } = useStore();
-  let ids;
-  let collection;
+  const { state } = useStore();
+  const [collection, updateCollection] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  let dataObjects;
   
-  const fetchIds = async () => {
-    let topic = await state.dailyCurationTopic;
-    let data = await getDailyCollectionIds(topic);
-    ids = await data.objectIDs;    
-    console.log(ids);
-    await fetchCollection();
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      let topic = await state.dailyCurationTopic;
+      let data = await getDailyCollectionIds(topic);
+      console.log(data.objectIDs);
+      dataObjects = await getDailyCollection(data.objectIDs);
+      updateCollection(dataObjects);
+      console.log(collection);
+      setIsLoading(false)
+    };
+    fetchData();
+  }, [isLoading]);
   
-  const fetchCollection = async () => {
-    let data = await getDailyCollection(ids);
-    let collection = await data;
-    console.log(collection);
-    
-  }
   
-  fetchIds()
-  
-  // getDailyCollection(state.dailyCurationTopicIds)
   return (
-    <p>hi</p>
-  )
-}
+    <div className="images-container">
+      {!collection ? <p>Loading....</p> : 
+        collection.map((artwork) => (
+          <ArtWorkPreview key={artwork.objectID} src={artwork.primaryImage} />
+        ))}
+    </div>
+  );
+
+  }
+

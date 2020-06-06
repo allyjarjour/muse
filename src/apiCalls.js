@@ -6,7 +6,6 @@ export const getDailyCollectionIds = async (theme) => {
   try {
     let response = await fetch(`${fetchLink}v1/search?isOnView=true&q=${theme}`);
     let data = await response.json()
-    await console.log(data);
     return data
   }
   catch (error) {
@@ -15,7 +14,6 @@ export const getDailyCollectionIds = async (theme) => {
 }
 
 export const getDailyCollection = async (ids) => {
-  console.log(ids);
   try {
      let featuredCollection = await Promise.all(
        ids.map(async id => {
@@ -25,7 +23,6 @@ export const getDailyCollection = async (ids) => {
          return collectionsRes.json()
        })
      )
-     console.log(featuredCollection);
     return featuredCollection
    }
   catch (error) {
