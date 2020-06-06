@@ -1,0 +1,60 @@
+header h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-transform: uppercase;
+  color: white;
+  width: 20%;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+header {
+  padding: 0px 10px 10px 10px;
+  background-color: black;
+  height: 13vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle, header p {
+  color: white;
+}
+
+.nav-btn-container {
+  justify-content: space-between;
+  width: 35%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-page {
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-weight: bold;
+}
+
+@media all and (min-width: 600px) {
+  .nav-btn-container {
+    justify-content: space-around;
+    flex-direction: row;
+    min-width: 400px;
+    margin-top: 45px;
+  }
+  header p {
+    margin-right: 10px;
+  }
+
+  header {
+    height: 10vh;
+  }
+
+  header h1 {
+    padding-top: 0px;
+  }
+
+}
