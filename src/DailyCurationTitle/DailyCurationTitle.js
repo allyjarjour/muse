@@ -8,7 +8,6 @@ export const DailyCurationTitle = () => {
   useEffect(() => {
     dispatch({ type: "findRandomTopic" });
   }, [])
-  console.log(state.dailyCurationTopic);
   
   return (
     <div className="daily-curation-title">

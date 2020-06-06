@@ -6,6 +6,7 @@ const StoreContext = createContext();
 const initialState = {
   dailyCurationTopics: ["sunflower"],
   dailyCurationTopic: '',
+  currentArtwork: {}
 };
 
 const reducer = (state, action) => {
@@ -16,6 +17,11 @@ const reducer = (state, action) => {
           Math.random() * state.dailyCurationTopics.length
         )],
       };
+    case "updateCurrentArtwork":
+      return { ...state, 
+        currentArtwork: { ...action.artDetails },
+      };
+    
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
