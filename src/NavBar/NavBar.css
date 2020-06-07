@@ -15,6 +15,10 @@ header {
   justify-content: space-between;
 }
 
+header a {
+  text-decoration: none;
+}
+
 .title-container {
   display: flex;
   flex-direction: column;

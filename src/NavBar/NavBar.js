@@ -1,15 +1,16 @@
 import React from 'react'
-import { useStore } from '../store'
 import './NavBar.css'
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 export const NavBar = () => {
   return (
     <header>
-      <div className="title-container">
-        <h1 className="title">Muse</h1>
-        <p className="subtitle">inspiration from the Met</p>
-      </div>
+      <Link to="/">
+        <div className="title-container">
+           <h1 className="title">Muse</h1>
+           <p className="subtitle">inspiration from the Met</p>
+        </div>
+      </Link>
       <div className="nav-btn-container">
         <NavLink exact to="/" activeClassName="active-page">
           <p>Daily Curation</p>
