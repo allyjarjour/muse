@@ -26,3 +26,12 @@
 .ExpandedView a:hover {
   font-style: italic;
 }
+
+.not-favorited {
+  width: 40px;
+}
+
+.title-container-expanded {
+  display: flex;
+  justify-content: space-between;
+}
