@@ -51,6 +51,7 @@ header {
 
   header {
     height: 10vh;
+    min-height: 80px;
   }
 
   header h1 {

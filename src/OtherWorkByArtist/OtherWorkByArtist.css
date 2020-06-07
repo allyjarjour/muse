@@ -1,0 +1,11 @@
+.art-by-artist-container {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.art-by-artist-container img {
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+}

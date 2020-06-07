@@ -1,0 +1,28 @@
+.expanded-view-image {
+  object-fit: cover;
+  /* height: 550px; */
+  width: 50%;
+  margin: 30px 50px;
+}
+
+.ExpandedView h1{
+  margin: 20px 0px;
+}
+
+.ExpandedView {
+  margin-top: 50px;
+  display: flex;
+}
+
+.ExpandedView span {
+  font-weight: bold;
+}
+
+.ExpandedView a {
+ text-decoration: none;
+ color: black;
+}
+
+.ExpandedView a:hover {
+  font-style: italic;
+}
