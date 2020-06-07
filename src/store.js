@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { getDailyCollectionIds, getDailyCollection } from "./apiCalls";
+// import { getDailyCollectionIds, getDailyCollection } from "./apiCalls";
 
 
 const StoreContext = createContext();
 const initialState = {
   dailyCurationTopics: ["sunflower"],
   dailyCurationTopic: '',
-  currentArtwork: {}
+  currentArtwork: {},
+  favorites: []
 };
 
 const reducer = (state, action) => {
@@ -21,6 +22,12 @@ const reducer = (state, action) => {
       return { ...state, 
         currentArtwork: { ...action.artDetails },
       };
+    case "addToFavorites":
+      return { ...state, 
+        favorites: [...state.favorites, { ...action.artDetails } ],
+      };
+    case "deleteFromFavorites":
+      return { ...state, favorites: state.favorites.filter(fave => fave.objectID !== action.artDetails.objectID ) };
     
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
