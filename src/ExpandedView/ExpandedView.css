@@ -27,8 +27,12 @@
   font-style: italic;
 }
 
+.not-favorited,
 .not-favorited {
+  margin-top: 20px;
+  cursor: pointer;
   width: 40px;
+  height: 40px;
 }
 
 .title-container-expanded {
