@@ -11,12 +11,12 @@ export const ArtWorkPreview = ({ artwork }) => {
 
   const findCurrentArtwork = () => {
     dispatch({ type: "updateCurrentArtwork", artDetails: artwork  })
-    console.log(state.currentArtwork);
   }
 
   return (
     <Link to={`/expanded-view/${artwork.title}`}>
       <img
+        data-testid="artwork-preview"
         onClick={findCurrentArtwork}
         className="preview-image"
         src={artwork.primaryImageSmall}

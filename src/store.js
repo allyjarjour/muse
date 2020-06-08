@@ -1,10 +1,8 @@
 import React, { createContext, useContext, useReducer } from "react";
-// import { getDailyCollectionIds, getDailyCollection } from "./apiCalls";
-
 
 const StoreContext = createContext();
 const initialState = {
-  dailyCurationTopics: ["sunflower"],
+  dailyCurationTopics: ["sea", "sunflower", "mountain", "sunset"],
   dailyCurationTopic: '',
   currentArtwork: {},
   favorites: []

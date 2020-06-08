@@ -27,8 +27,7 @@
   font-style: italic;
 }
 
-.not-favorited,
-.not-favorited {
+.heart-icon {
   margin: 20px 10px 0px 15px;
   cursor: pointer;
   width: 40px;

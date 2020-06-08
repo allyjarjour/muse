@@ -1,12 +1,11 @@
 import React from "react";
 import { DailyCuration } from "./DailyCuration";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { StoreProvider } from "../store";
-import { Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
-// import { act } from "react-dom/test-utils";
+import { BrowserRouter } from "react-router-dom";
 import { getDailyCollectionIds, getDailyCollection } from '../apiCalls.js'
+
 getDailyCollectionIds.mockResolvedValue([436524, 11922]);
 getDailyCollection.mockResolvedValue([
   {
@@ -55,18 +54,30 @@ jest.mock("../apiCalls.js");
 
 
 describe('DailyCuration', () => {
-  const history = createMemoryHistory();
-  it('should display a container for the images', () => {
-    history.push("/");
-    // act(() => {
+  it('should display a container for the images', async () => {
     const { getByTestId } = render(
-        <StoreProvider>
-          <Router history={history}>
-            <DailyCuration />
-          </Router>
-        </StoreProvider>
-    )
-  expect(getByTestId("images-container")).toBeInTheDocument();
-// })
+      <StoreProvider>
+        <BrowserRouter>
+          <DailyCuration />
+        </BrowserRouter>
+      </StoreProvider>
+    );
+    await waitFor(() => {
+      expect(getByTestId("images-container")).toBeInTheDocument();
+    })
+  })
+
+  it('should display artwork previews for the data fetched from api', async () => {
+    const { getByAltText } = render(
+      <StoreProvider>
+        <BrowserRouter>
+          <DailyCuration />
+        </BrowserRouter>
+      </StoreProvider>
+    );
+    await waitFor(() => {
+      expect(getByAltText("Sunflowers")).toBeInTheDocument()
+      expect(getByAltText("Clytie")).toBeInTheDocument()
+    })
   })
 })

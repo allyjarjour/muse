@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './ExpandedView.css'
 import { useStore } from "../store";
 
@@ -15,14 +15,13 @@ export const ExpandedView = ({ artwork }) => {
     if (!(state.favorites.some(fave => fave.objectID === artwork.objectID))) {
       dispatch({ type: "addToFavorites", artDetails: artwork });
     }    
-    console.log(state.favorites);
   }
 
   return (
     <div className="ExpandedView">
       <img
         className="expanded-view-image"
-        src={artwork.primaryImage}
+        src={artwork.primaryImageSmall}
         alt={artwork.title}
       />
       <div className="artwork-details">
@@ -30,11 +29,17 @@ export const ExpandedView = ({ artwork }) => {
           <h1>{artwork.title}</h1>
           <img
             onClick={toggleFavorite}
-            alt="Icon for artwork not favorited"
-            className="not-favorited"
-            src={state.favorites.some(
-              (fave) => fave.objectID === artwork.objectID
-            ) ? faveHeart : unFaveHeart}
+            alt={
+              state.favorites.some((fave) => fave.objectID === artwork.objectID)
+                ? "Icon for favorited artwork"
+                : "Icon for artwork not favorited"
+            }
+            className="heart-icon"
+            src={
+              state.favorites.some((fave) => fave.objectID === artwork.objectID)
+                ? faveHeart
+                : unFaveHeart
+            }
           />
         </div>
         {artwork.artistDisplayName && (
