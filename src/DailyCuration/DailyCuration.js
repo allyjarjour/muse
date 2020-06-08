@@ -17,7 +17,7 @@ export const DailyCuration = () => {
       console.log(data.objectIDs);
       dataObjects = await getDailyCollection(data.objectIDs);
       updateCollection(dataObjects);
-      console.log(collection);
+      console.log(dataObjects);
       setIsLoading(false)
     };
     fetchData();
@@ -28,7 +28,7 @@ export const DailyCuration = () => {
     <div className="images-container">
       {!collection ? <p>Loading....</p> : 
         collection.map((artwork) => (
-          <ArtWorkPreview key={artwork.objectID} src={artwork.primaryImage} />
+          <ArtWorkPreview artwork={artwork} key={artwork.objectID}/>
         ))}
     </div>
   );

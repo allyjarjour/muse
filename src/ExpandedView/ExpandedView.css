@@ -1,0 +1,41 @@
+.expanded-view-image {
+  object-fit: cover;
+  /* height: 550px; */
+  width: 50%;
+  margin: 30px 50px;
+}
+
+.ExpandedView h1{
+  margin: 20px 0px;
+}
+
+.ExpandedView {
+  margin-top: 50px;
+  display: flex;
+}
+
+.ExpandedView span {
+  font-weight: bold;
+}
+
+.ExpandedView a {
+ text-decoration: none;
+ color: black;
+}
+
+.ExpandedView a:hover {
+  font-style: italic;
+}
+
+.not-favorited,
+.not-favorited {
+  margin-top: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.title-container-expanded {
+  display: flex;
+  justify-content: space-between;
+}

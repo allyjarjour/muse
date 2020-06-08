@@ -17,9 +17,7 @@ export const getDailyCollection = async (ids) => {
   try {
      let featuredCollection = await Promise.all(
        ids.map(async id => {
-         let collectionsRes = await fetch(
-           `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
-         );
+         let collectionsRes = await fetch(`${fetchLink}v1/objects/${id}`);
          return collectionsRes.json()
        })
      )
@@ -28,4 +26,15 @@ export const getDailyCollection = async (ids) => {
   catch (error) {
      console.log(error);
   }
+}
+
+export const getOtherArtByArtist = async (artist) => {
+  try {
+    let response = await fetch(`${fetchLink}v1/search?artistOrCulture=true&q=${artist}`);
+    let data = await response.json();
+    return data;
+  }
+  catch (error) {
+      console.log(error);
+    }
 }
