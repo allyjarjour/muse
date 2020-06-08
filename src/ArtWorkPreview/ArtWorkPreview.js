@@ -19,7 +19,7 @@ export const ArtWorkPreview = ({ artwork }) => {
       <img
         onClick={findCurrentArtwork}
         className="preview-image"
-        src={artwork.primaryImage}
+        src={artwork.primaryImageSmall}
         alt={artwork.title}
       />
     </Link>

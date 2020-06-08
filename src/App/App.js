@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { NavBar } from '../NavBar/NavBar'
+import { FavoritesPage } from '../FavoritesPage/FavoritesPage'
 import { Switch, Route } from "react-router-dom";
 import { DailyCurationTitle } from '../DailyCurationTitle/DailyCurationTitle'
 import { DailyCuration } from '../DailyCuration/DailyCuration'
@@ -20,6 +21,9 @@ function App() {
         <Route path="/expanded-view/:artwork">
           <ExpandedView artwork={state.currentArtwork} />
           <OtherWorkByArtist artwork={state.currentArtwork} />
+        </Route>
+        <Route exact path="/favorites">
+          <FavoritesPage />
         </Route>
         <Route exact path="/">
           <DailyCurationTitle />

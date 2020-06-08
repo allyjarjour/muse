@@ -29,7 +29,7 @@
 
 .not-favorited,
 .not-favorited {
-  margin-top: 20px;
+  margin: 20px 10px 0px 15px;
   cursor: pointer;
   width: 40px;
   height: 40px;
