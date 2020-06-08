@@ -1,0 +1,11 @@
+.FavoritesPage h1 {
+  text-transform: uppercase;
+  margin: 30px auto;
+  width: 175px;
+}
+
+.blank-canvas {
+  width: 40%;
+}
+
+

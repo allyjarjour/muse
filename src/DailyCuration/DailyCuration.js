@@ -11,25 +11,26 @@ export const DailyCuration = () => {
   let dataObjects;
   
   useEffect(() => {
-    const fetchData = async () => {
-      let topic = await state.dailyCurationTopic;
-      let data = await getDailyCollectionIds(topic);
-      console.log(data.objectIDs);
-      dataObjects = await getDailyCollection(data.objectIDs);
-      updateCollection(dataObjects);
-      console.log(dataObjects);
-      setIsLoading(false)
-    };
     fetchData();
   }, [isLoading]);
   
+  const fetchData = async () => {
+    let topic = await state.dailyCurationTopic;
+    let data = await getDailyCollectionIds(topic);
+    dataObjects = await getDailyCollection(data.objectIDs);
+    updateCollection(dataObjects);
+    setIsLoading(false)
+  };
   
   return (
-    <div className="images-container">
-      {!collection ? <p>Loading....</p> : 
+    <div className="images-container" data-testid="images-container">
+      {!collection ? (
+        <p>Loading....</p>
+      ) : (
         collection.map((artwork) => (
-          <ArtWorkPreview artwork={artwork} key={artwork.objectID}/>
-        ))}
+          <ArtWorkPreview artwork={artwork} key={artwork.objectID} />
+        ))
+      )}
     </div>
   );
 
