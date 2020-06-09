@@ -61,7 +61,20 @@ const artwork = {
 
 
 describe('OtherWorkByArtist', () => {
-  it('should should display a title if there is other work by the same artist', async () => {
+  it('should display a title if there is other work by the same artist', async () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <StoreProvider>
+          <OtherWorkByArtist artwork={artwork} />
+        </StoreProvider>
+      </BrowserRouter>
+    );
+    await waitFor(() => {
+      expect(getByText("Other work by this artist:")).toBeInTheDocument();
+    })
+  })
+
+  it('should display image previews for artwork displayed', async () => {
     const { getByAltText } = render(
       <BrowserRouter>
         <StoreProvider>

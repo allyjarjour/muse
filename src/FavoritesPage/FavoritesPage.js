@@ -9,12 +9,18 @@ export const FavoritesPage = () => {
   return (
     <section className="FavoritesPage">
       <h1>Favorites</h1>
-      <div className="images-container">
+      <div className="images-container" data-testid="fave-images-container">
         {!state.favorites.length ? (
-          <img className="blank-canvas" alt="blank canvas symbolizing an empty favorites page" src="/empty-canvas.png" />)
-          : (state.favorites.map(fave => (
-          <ArtWorkPreview artwork={fave} key={fave.objectID} />))
-          )}
+          <img
+            className="blank-canvas"
+            alt="blank canvas symbolizing an empty favorites page"
+            src="/empty-canvas.png"
+          />
+        ) : (
+          state.favorites.map((fave) => (
+            <ArtWorkPreview artwork={fave} key={fave.objectID} />
+          ))
+        )}
       </div>
     </section>
   );
