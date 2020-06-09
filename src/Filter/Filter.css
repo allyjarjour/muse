@@ -14,10 +14,6 @@
   padding-left: 10px;
 }
 
-/* .search-input input {
-  position: relative;
-} */
-
 .search-input::placeholder {
   font-style: italic;
 }
@@ -44,9 +40,6 @@
   font-weight: lighter;
 }
 
-/* .cancel-icon {
-
-} */
 
 
 

@@ -18,8 +18,8 @@ export const NavBar = () => {
         <NavLink to="/medium" activeClassName="active-page">
           <p>Medium</p>
         </NavLink>
-        <NavLink to="/location" activeClassName="active-page">
-          <p>Location</p>
+        <NavLink to="/culture_or_artist" activeClassName="active-page">
+          <p>Search</p>
         </NavLink>
         <NavLink to="/favorites" activeClassName="active-page">
           <p>Favorites</p>

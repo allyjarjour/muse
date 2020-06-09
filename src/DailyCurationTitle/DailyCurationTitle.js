@@ -7,6 +7,9 @@ export const DailyCurationTitle = () => {
   const { state, dispatch } = useStore();
   useEffect(() => {
     dispatch({ type: "findRandomTopic" });
+    return () => {
+      dispatch({ type: "resetRandomTopic" });
+    }
   }, [])
   
   return (

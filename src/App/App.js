@@ -27,9 +27,14 @@ function App() {
         <Route path="/favorites">
           <FavoritesPage />
         </Route>
-        <Route path="/location">
-          <Filter page="location" />
-          <NothingSelectedAlert page="location" />
+        <Route path="/culture_or_artist">
+          <Filter page="culture-or-artist" />
+          {!state.cultureOrArtistQuery && (
+            <NothingSelectedAlert page="culture-or-artist" />
+          )}
+          {state.cultureOrArtistQuery && (
+            <DailyCuration page="culture-or-artist" />
+          )}
         </Route>
         <Route path="/medium">
           <Filter page="medium" />
@@ -37,7 +42,7 @@ function App() {
         </Route>
         <Route exact path="/">
           <DailyCurationTitle />
-          <DailyCuration />
+          <DailyCuration page="daily-curation" />
         </Route>
       </Switch>
     </div>

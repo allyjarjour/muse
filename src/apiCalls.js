@@ -37,3 +37,26 @@ export const getOtherArtByArtist = async (artist) => {
       console.log(error);
     }
 }
+
+export const fetchByArtistOrCulture = async (query) => {
+  try {
+    let response = await fetch(`${fetchLink}v1/search?hasImages=true&artistOrCulture=true&q=${query}`);
+    let data = await response.json();
+    return data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+export const fetchByArtistOrCultureAndOnDisplay = async (query) => {
+  try {
+    let response = await fetch(
+      `${fetchLink}v1/search?isOnView=true&hasImages=true&artistOrCulture=true&q=${query}`
+    );
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
