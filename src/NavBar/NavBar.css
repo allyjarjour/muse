@@ -30,7 +30,7 @@ header a {
 
 .nav-btn-container {
   justify-content: space-between;
-  width: 35%;
+  width: 25%;
   float: right;
   display: flex;
   flex-direction: column;

@@ -4,6 +4,7 @@ import { getDailyCollectionIds, getDailyCollection } from '../apiCalls'
 import { useStore } from "../store";
 import { ArtWorkPreview } from "../ArtWorkPreview/ArtWorkPreview";
 
+
 export const DailyCuration = () => {
   const { state } = useStore();
   const [collection, updateCollection] = useState([])

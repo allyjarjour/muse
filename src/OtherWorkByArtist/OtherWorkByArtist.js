@@ -6,9 +6,8 @@ import { useStore } from "../store";
 import ScrollContainer from "react-indiana-drag-scroll";
 
 
-export const OtherWorkByArtist = () => {
-  const { state, dispatch } = useStore()
-  let artwork = state.currentArtwork;
+export const OtherWorkByArtist = ({ artwork }) => {
+  const { dispatch } = useStore()
   let artistLastName = artwork.artistDisplayName.split(" ");
   artistLastName = artistLastName[artistLastName.length - 1];
   const [artSelection, updateArtSelection] = useState([])
@@ -22,7 +21,7 @@ export const OtherWorkByArtist = () => {
   }
   useEffect(() => {
     fetchData()
-  }, [state])
+  }, [artwork])
 
   const findCurrentArtwork = (art) => {
     dispatch({ type: "updateCurrentArtwork", artDetails: art });
@@ -38,7 +37,7 @@ export const OtherWorkByArtist = () => {
             <Link to={`/expanded-view/${art.title}`} key={art.objectID}>
               <img
                 onClick={() => findCurrentArtwork(art)}
-                src={art.primaryImage}
+                src={art.primaryImageSmall}
                 alt={art.title}
               />
             </Link>

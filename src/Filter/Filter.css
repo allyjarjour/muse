@@ -1,0 +1,54 @@
+.Filter {
+  margin: 50px auto 20px auto;
+  width: 40%;
+}
+
+.Filter h1 {
+  text-align: center;
+}
+
+.search-input {
+  margin: 40px auto;
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+}
+
+/* .search-input input {
+  position: relative;
+} */
+
+.search-input::placeholder {
+  font-style: italic;
+}
+
+.input-container {
+  display: flex;
+}
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.on-display-checkbox {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.on-display-checkbox label {
+  margin-right: 10px;
+  font-weight: lighter;
+}
+
+/* .cancel-icon {
+
+} */
+
+
+
+
+
