@@ -57,7 +57,9 @@ export const ExpandedView = ({ artwork }) => {
           <span>Dimensions:</span> {artwork.dimensions}
         </p>
         <p>
-          <a href={artwork.objectURL}>Read more at the Met</a>
+          <a href={artwork.objectURL} target="_blank">
+            Read more at the Met
+          </a>
         </p>
       </div>
     </div>

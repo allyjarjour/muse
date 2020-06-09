@@ -4,8 +4,6 @@ import { useStore } from "../store";
 import { Link } from "react-router-dom";
 
 
-
-
 export const ArtWorkPreview = ({ artwork }) => {
   const { dispatch } = useStore();
 
