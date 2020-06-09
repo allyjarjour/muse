@@ -1,0 +1,42 @@
+.NothingSelectedAlert {
+  width: 50%;
+  background-size: cover;
+  margin: 0 auto;
+  height: 300px;
+  background-repeat: no-repeat;
+  padding-top: 10%;
+}
+
+.location {
+  background-image: url("/VanGogh_Background.jpg");
+}
+
+.medium {
+  background-image: url("/Monet_Background.jpg");
+}
+
+
+.NothingSelectedAlert h2 {
+  font-family: 'Permanent Marker', cursive;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.medium h2 {
+  color: black;
+}
+
+@media all and (min-width: 600px) {
+  .NothingSelectedAlert {
+    height: 500px;
+  }
+
+  .NothingSelectedAlert h2 {
+  font-size: 40px;
+  }
+
+}

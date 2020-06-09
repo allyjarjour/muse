@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { NavBar } from '../NavBar/NavBar'
 import { FavoritesPage } from '../FavoritesPage/FavoritesPage'
@@ -6,6 +6,8 @@ import { Switch, Route } from "react-router-dom";
 import { DailyCurationTitle } from '../DailyCurationTitle/DailyCurationTitle'
 import { DailyCuration } from '../DailyCuration/DailyCuration'
 import { ExpandedView } from '../ExpandedView/ExpandedView'
+import { Filter } from '../Filter/Filter'
+import { NothingSelectedAlert } from '../NothingSelectedAlert/NothingSelectedAlert'
 import { OtherWorkByArtist } from '../OtherWorkByArtist/OtherWorkByArtist'
 import { useStore } from "../store";
 
@@ -22,8 +24,16 @@ function App() {
           <ExpandedView artwork={state.currentArtwork} />
           <OtherWorkByArtist artwork={state.currentArtwork} />
         </Route>
-        <Route exact path="/favorites">
+        <Route path="/favorites">
           <FavoritesPage />
+        </Route>
+        <Route path="/location">
+          <Filter page="location" />
+          <NothingSelectedAlert page="location" />
+        </Route>
+        <Route path="/medium">
+          <Filter page="medium" />
+          <NothingSelectedAlert page="medium" />
         </Route>
         <Route exact path="/">
           <DailyCurationTitle />
