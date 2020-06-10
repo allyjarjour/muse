@@ -157,7 +157,7 @@ describe("App", () => {
     })
   })
 
-  it('should direct to the search page upon clicking the search tab in the nav bar', async () => {
+  it('should direct to the search by artist or culture page upon clicking the search tab in the nav bar', async () => {
     const history = createMemoryHistory();
     history.push("/");
     const { getByText } = render(
@@ -168,9 +168,27 @@ describe("App", () => {
       </StoreProvider>
     );
     await waitFor(() => {
-      userEvent.click(getByText('Search'))
+      userEvent.click(getByText('Artist'))
       expect(getByText("discover new art by searching by artist name or culture above")).toBeInTheDocument();
       expect(getByText("Explore by culture or artist")).toBeInTheDocument();
+      expect(getByText("View only artwork on display at the Met")).toBeInTheDocument();
+    })
+  })
+
+  it('should direct to the search by medium page upon clicking the medium tab in the nav bar', async () => {
+    const history = createMemoryHistory();
+    history.push("/");
+    const { getByText } = render(
+      <StoreProvider>
+        <Router history={history}>
+          <App />
+        </Router>
+      </StoreProvider>
+    );
+    await waitFor(() => {
+      userEvent.click(getByText('Medium'))
+      expect(getByText("discover new art by searching a medium above")).toBeInTheDocument();
+      expect(getByText("Explore by medium")).toBeInTheDocument();
       expect(getByText("View only artwork on display at the Met")).toBeInTheDocument();
     })
   })
