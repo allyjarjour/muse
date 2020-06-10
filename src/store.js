@@ -8,7 +8,6 @@ const initialState = {
   favorites: [],
   cultureOrArtistQuery: "",
   mediumQuery: "",
-  subCategories: [],
   filterByDisplay: false
 };
 
@@ -56,12 +55,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         mediumQuery: action.mediumQuery,
-      };
-    
-    case "updateMediumSubCategories":
-      return {
-        ...state,
-        subCategories: [...state.subCategories, action.subCategories],
       };
 
     case "updateFilterByDisplay":
