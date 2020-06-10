@@ -38,7 +38,8 @@ function App() {
         </Route>
         <Route path="/medium">
           <Filter page="medium" />
-          <NothingSelectedAlert page="medium" />
+          {!state.mediumQuery && <NothingSelectedAlert page="medium" />}
+          {state.mediumQuery && <DailyCuration page="medium" />}
         </Route>
         <Route exact path="/">
           <DailyCurationTitle />

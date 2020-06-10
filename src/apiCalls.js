@@ -60,3 +60,15 @@ export const fetchByArtistOrCultureAndOnDisplay = async (query) => {
     console.log(error);
   }
 }
+
+export const fetchByMedium = async (medium, subCats) => {
+  try {
+    let response = await fetch(
+      `${fetchLink}v1/search?medium=${medium}&q=${medium}`
+    );
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
