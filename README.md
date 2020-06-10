@@ -15,3 +15,21 @@ Run npm install
 Run npm start
 Enjoy!
 This application was created using create-react-app.
+
+#### Favorites page:
+![favorites page](public/Screenshots/favorites.png)
+
+#### Search by medium page:
+![search by medium page](public/Screenshots/medium.png)
+
+#### Expanded view of artwork page:
+![expanded page](public/Screenshots/expanded-view.png)
+
+#### Daily curation / home page :
+![daily curation page](public/Screenshots/daily-curation.png)
+
+#### Search by culture or artist page:
+![search by culture or artist page](public/Screenshots/culture-or-artist.png)
+
+
+
