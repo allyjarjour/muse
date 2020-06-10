@@ -24,7 +24,7 @@ describe("NavBar", () => {
     );
     expect(getByText("Daily Curation")).toBeInTheDocument()
     expect(getByText("Medium")).toBeInTheDocument()
-    expect(getByText("Location")).toBeInTheDocument()
+    expect(getByText("Artist")).toBeInTheDocument()
     expect(getByText("Favorites")).toBeInTheDocument()
   })
 
