@@ -1,63 +1,21 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import App from './App';
-import "@testing-library/jest-dom/extend-expect";
 import { StoreProvider } from "../store";
 import { Router } from "react-router-dom";
 import {
   getOtherArtByArtist,
   getDailyCollection,
   getDailyCollectionIds,
+  fetchByArtistOrCulture,
+  fetchByArtistOrCultureAndOnDisplay,
 } from "../apiCalls.js";
 import userEvent from "@testing-library/user-event";
 import { createMemoryHistory } from "history";
 
-
+fetchByArtistOrCultureAndOnDisplay.mockResolvedValue([12345])
+fetchByArtistOrCulture.mockResolvedValue([11922]);
 getDailyCollectionIds.mockResolvedValue([436524, 11922]);
-// getDailyCollection.mockResolvedValue([
-//   {
-//     artistAlphaSort: "Gogh, Vincent van",
-//     artistBeginDate: "1853",
-//     artistDisplayBio: "Dutch, Zundert 1853–1890 Auvers-sur-Oise",
-//     artistDisplayName: "Vincent van Gogh",
-//     artistEndDate: "1890",
-//     artistNationality: "Dutch",
-//     dimensions: "17 x 24 in. (43.2 x 61 cm)",
-//     isHighlight: false,
-//     medium: "Oil on canvas",
-//     objectDate: "1887",
-//     objectID: 436524,
-//     primaryImage:
-//       "https://images.metmuseum.org/CRDImages/ep/original/DP229743.jpg",
-//     primaryImageSmall:
-//       "https://images.metmuseum.org/CRDImages/ep/web-large/DP229743.jpg",
-//     title: "Sunflowers",
-//   },
-//   {
-//     artistAlphaSort: "Rinehart, William Henry",
-//     artistBeginDate: "1825",
-//     artistDisplayBio: "American, Union Bridge, Maryland 1825–1874 Rome",
-//     artistDisplayName: "William Henry Rinehart",
-//     artistNationality: "American",
-//     culture: "American",
-//     department: "The American Wing",
-//     dimensions: "62 1/2 x 18 1/2 x 21 1/4 in. (158.8 x 47 x 54 cm)",
-//     isHighlight: false,
-//     medium: "Marble",
-//     metadataDate: "2020-03-03T07:20:07.517Z",
-//     objectBeginDate: 1869,
-//     objectDate: "1869–70; carved 1872",
-//     objectEndDate: 1872,
-//     objectID: 11922,
-//     objectName: "Sculpture",
-//     objectURL: "https://www.metmuseum.org/art/collection/search/11922",
-//     primaryImage:
-//       "https://images.metmuseum.org/CRDImages/ad/original/DT218366.jpg",
-//     primaryImageSmall:
-//       "https://images.metmuseum.org/CRDImages/ad/web-large/DT218366.jpg",
-//     title: "Clytie",
-//   },
-// ]);
 getOtherArtByArtist.mockResolvedValue({ objectIDs: [438820, 436015] });
 getDailyCollection.mockResolvedValue([
   {
@@ -184,7 +142,7 @@ describe("App", () => {
   it('should return to homepage/Daily Curation page once the user clicks the logo', async () => {
     const history = createMemoryHistory();
     history.push("/favorites");
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <StoreProvider>
         <Router history={history}>
           <App />
@@ -196,6 +154,24 @@ describe("App", () => {
       expect(
         getByText("Explore a collection of art chosen around a daily theme. Today find inspiration through"
         )).toBeInTheDocument();
+    })
+  })
+
+  it('should direct to the search page upon clicking the search tab in the nav bar', async () => {
+    const history = createMemoryHistory();
+    history.push("/");
+    const { getByText } = render(
+      <StoreProvider>
+        <Router history={history}>
+          <App />
+        </Router>
+      </StoreProvider>
+    );
+    await waitFor(() => {
+      userEvent.click(getByText('Search'))
+      expect(getByText("discover new art by searching by artist name or culture above")).toBeInTheDocument();
+      expect(getByText("Explore by culture or artist")).toBeInTheDocument();
+      expect(getByText("View only artwork on display at the Met")).toBeInTheDocument();
     })
   })
 })

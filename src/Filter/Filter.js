@@ -2,33 +2,33 @@ import React, { useState, useEffect } from 'react'
 import './Filter.css'
 import { useStore } from "../store";
 
-// import { fetchByArtistOrCulture } from '../apiCalls'
-
 export const Filter = ({ page }) => {
   const [searchTerms, updateSearch] = useState({})
   const { state, dispatch } = useStore()
 
   useEffect(() => {
-
     return () => {
       dispatch({ type: "updateCultureOrArtistQuery", cultureOrArtistQuery: "" })
+      dispatch({ type: "updateMediumQuery", mediumQuery: "" })
+      dispatch({ type: "updateMediumSubCategories", subCategories: [] });
     }
   }, [])
 
   const handleChange = (e) => {
-    if (page === 'culture-or-artist') {
       const name = e.target.name;      
       const value = e.target.value;
       const search = {[name]: value}
       updateSearch(search)
-    }
   }
 
   const handleClick = () => {
     if (page === "culture-or-artist") {
       dispatch({ type: "updateCultureOrArtistQuery", cultureOrArtistQuery: searchTerms });
     }
-    console.log(state.cultureOrArtistQuery);
+    if (page === "medium") {
+      dispatch({ type: "updateMediumQuery", mediumQuery: searchTerms });
+    }
+      console.log(state.mediumQuery);
   }
 
   const filterByDisplay = (e) => {
@@ -59,7 +59,6 @@ export const Filter = ({ page }) => {
                 : "ceramics, furniture, paintings, sculpture, textiles, etc"
             }
           />
-          {/* <img className="cancel-icon" src="./cancel-icon.svg" alt="clear input icon" /> */}
           <img
             className="search-icon"
             alt="search icon arrow"

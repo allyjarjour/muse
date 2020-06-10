@@ -1,7 +1,6 @@
 import React from "react";
 import { OtherWorkByArtist } from "./OtherWorkByArtist";
 import { render, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import { StoreProvider } from "../store";
 import { BrowserRouter } from "react-router-dom";
 import { getOtherArtByArtist, getDailyCollection } from "../apiCalls.js";

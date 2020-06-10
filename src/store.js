@@ -7,6 +7,8 @@ const initialState = {
   currentArtwork: {},
   favorites: [],
   cultureOrArtistQuery: "",
+  mediumQuery: "",
+  subCategories: [],
   filterByDisplay: false
 };
 
@@ -15,23 +17,27 @@ const reducer = (state, action) => {
     case "findRandomTopic":
       return {
         ...state,
-        dailyCurationTopic:
-          state.dailyCurationTopics[
-            Math.floor(Math.random() * state.dailyCurationTopics.length)
-          ],
-      };
+        dailyCurationTopic: state.dailyCurationTopics[
+            Math.floor(Math.random() * state.dailyCurationTopics.length)]};
+    
     case "resetRandomTopic":
       return {
         ...state,
         dailyCurationTopic: ""
       };
+    
     case "updateCurrentArtwork":
-      return { ...state, currentArtwork: { ...action.artDetails } };
+      return {
+        ...state,
+        currentArtwork: { ...action.artDetails }
+      };
+    
     case "addToFavorites":
       return {
         ...state,
         favorites: [...state.favorites, { ...action.artDetails }],
       };
+    
     case "deleteFromFavorites":
       return {
         ...state,
@@ -44,6 +50,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         cultureOrArtistQuery: action.cultureOrArtistQuery,
+      };
+    
+    case "updateMediumQuery":
+      return {
+        ...state,
+        mediumQuery: action.mediumQuery,
+      };
+    
+    case "updateMediumSubCategories":
+      return {
+        ...state,
+        subCategories: [...state.subCategories, action.subCategories],
       };
 
     case "updateFilterByDisplay":
