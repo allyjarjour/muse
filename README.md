@@ -31,5 +31,5 @@ This application was created using create-react-app.
 #### Search by culture or artist page:
 ![search by culture or artist page](public/Screenshots/culture-or-artist.png)
 
-
-
+#### Demo
+![app demo](https://media.giphy.com/media/efrJkFMJFldRQ7Iv9k/giphy.gif)
