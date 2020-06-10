@@ -16,6 +16,10 @@ Run npm start
 Enjoy!
 This application was created using create-react-app.
 
+### Future iterations
+- Add in a color palette generator for the photo on expanded page
+- Add in option to layer in sub categories for search by medium page
+
 #### Favorites page:
 ![favorites page](public/Screenshots/favorites.png)
 
@@ -34,3 +38,4 @@ This application was created using create-react-app.
 #### Demo
 ![app demo](https://media.giphy.com/media/efrJkFMJFldRQ7Iv9k/giphy.gif)
 ![app demo](https://media.giphy.com/media/l4p0bBcVHLeCAVXgYg/giphy.gif)
+![app demo](https://media.giphy.com/media/ZZHDpPWDDutyLi1YuX/giphy.gif)
