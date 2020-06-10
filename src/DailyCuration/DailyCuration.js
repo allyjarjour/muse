@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+ import Loader from "react-loader-spinner";
 import './DailyCuration.css'
 import {
   getDailyCollectionIds,
@@ -49,17 +51,12 @@ export const DailyCuration = ({ page }) => {
     }
   };
 
-  const fetchByMediumQuery = async () => {
-    console.log(state.mediumQuery.search);
-    
+  const fetchByMediumQuery = async () => {    
     let artworkIds = await fetchByMedium(state.mediumQuery.search);
       if (artworkIds.total > 300) {
         artworkIds.objectIDs = artworkIds.objectIDs.splice(0, 300);
-        console.log(artworkIds.objectIDs);
       }
     dataObjects = await getDailyCollection(artworkIds.objectIDs);
-    console.log(dataObjects);
-    
       await filterByDisplay()
       await updateCollection(dataObjects);
       await setIsLoading(false);   
@@ -78,13 +75,20 @@ export const DailyCuration = ({ page }) => {
   
   return (
     <div className="images-container" data-testid="images-container">
-      {isLoading && <p>...loading</p>}
+      {isLoading && (
+        <Loader
+          type="Hearts"
+          color="black"
+          height={100}
+          width={100}
+        />
+      )}
       {collection &&
         collection.map((artwork) => (
           <ArtWorkPreview artwork={artwork} key={artwork.objectID} />
         ))}
-      {(!collection && state.cultureOrArtistQuery) && <p>No results found</p>}
-      {(!collection && state.mediumQuery) && <p>No results found</p>}
+      {!collection && state.cultureOrArtistQuery && <p>No results found</p>}
+      {!collection && state.mediumQuery && <p>No results found</p>}
     </div>
   );
 
