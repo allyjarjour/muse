@@ -7,3 +7,10 @@
   overflow: scroll;
   height: 80vh;
 }
+
+.results-message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 25px;
+  font-style: italic;
+}
