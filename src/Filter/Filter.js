@@ -3,32 +3,39 @@ import './Filter.css'
 import { useStore } from "../store";
 
 export const Filter = ({ page }) => {
-  const [searchTerms, updateSearch] = useState({})
-  const { state, dispatch } = useStore()
+  const [searchTerms, updateSearch] = useState({search: ''})
+  const { dispatch } = useStore()
 
   useEffect(() => {
     return () => {
       dispatch({ type: "updateCultureOrArtistQuery", cultureOrArtistQuery: "" })
       dispatch({ type: "updateMediumQuery", mediumQuery: "" })
-      dispatch({ type: "updateMediumSubCategories", subCategories: [] });
     }
   }, [])
 
   const handleChange = (e) => {
+    if (page === "medium") {
       const name = e.target.name;      
-      const value = e.target.value;
+      const value = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
       const search = {[name]: value}
       updateSearch(search)
+    } else {
+      const name = e.target.name;
+      const value = e.target.value;
+      const search = { [name]: value };
+      updateSearch(search);
+    }
   }
 
   const handleClick = () => {
     if (page === "culture-or-artist") {
       dispatch({ type: "updateCultureOrArtistQuery", cultureOrArtistQuery: searchTerms });
+      updateSearch({ search: ''});
     }
     if (page === "medium") {
       dispatch({ type: "updateMediumQuery", mediumQuery: searchTerms });
+      updateSearch({search: ''});
     }
-      console.log(state.mediumQuery);
   }
 
   const filterByDisplay = (e) => {
@@ -52,6 +59,7 @@ export const Filter = ({ page }) => {
             onChange={handleChange}
             className="search-input"
             type="text"
+            value={searchTerms.search}
             name="search"
             placeholder={
               page === "culture-or-artist"
