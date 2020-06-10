@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Filter.css'
 import { useStore } from "../store";
 
+
 export const Filter = ({ page }) => {
   const [searchTerms, updateSearch] = useState({search: ''})
   const { dispatch } = useStore()
@@ -30,12 +31,11 @@ export const Filter = ({ page }) => {
   const handleClick = () => {
     if (page === "culture-or-artist") {
       dispatch({ type: "updateCultureOrArtistQuery", cultureOrArtistQuery: searchTerms });
-      updateSearch({ search: ''});
     }
     if (page === "medium") {
       dispatch({ type: "updateMediumQuery", mediumQuery: searchTerms });
-      updateSearch({search: ''});
     }
+    updateSearch({search: ''});
   }
 
   const filterByDisplay = (e) => {

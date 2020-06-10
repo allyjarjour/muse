@@ -94,7 +94,7 @@ describe("App", () => {
     'when user clicks the image', async () => {
        const history = createMemoryHistory();
        history.push("/");
-       const { queryByTestId, getAllByTestId, getByText, debug, getByAltText } = render(
+       const { queryByTestId, getAllByTestId, getByText, getByAltText } = render(
          <StoreProvider>
            <Router history={history}>
              <App />

@@ -74,22 +74,25 @@ export const DailyCuration = ({ page }) => {
   }
   
   return (
-    <div className="images-container" data-testid="images-container">
-      {isLoading && (
-        <Loader
-          type="Hearts"
-          color="black"
-          height={100}
-          width={100}
-        />
+    <>
+      {collection && state.cultureOrArtistQuery && (
+        <p className="results-message">Results for "{state.cultureOrArtistQuery.search}"</p>
       )}
-      {collection &&
-        collection.map((artwork) => (
-          <ArtWorkPreview artwork={artwork} key={artwork.objectID} />
-        ))}
-      {!collection && state.cultureOrArtistQuery && <p>No results found</p>}
-      {!collection && state.mediumQuery && <p>No results found</p>}
-    </div>
+      {collection && state.mediumQuery && (
+        <p className="results-message">Results for "{state.mediumQuery.search}"</p>
+      )}
+      <div className="images-container" data-testid="images-container">
+        {isLoading && (
+          <Loader type="Hearts" color="black" height={100} width={100} />
+        )}
+        {collection &&
+          collection.map((artwork) => (
+            <ArtWorkPreview artwork={artwork} key={artwork.objectID} />
+          ))}
+        {!collection && state.cultureOrArtistQuery && <p>No results found</p>}
+        {!collection && state.mediumQuery && <p className="results-message">No results found</p>}
+      </div>
+    </>
   );
 
   }
