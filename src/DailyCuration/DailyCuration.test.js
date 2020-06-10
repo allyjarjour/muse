@@ -1,11 +1,11 @@
 import React from "react";
 import { DailyCuration } from "./DailyCuration";
 import { render, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import { StoreProvider } from "../store";
 import { BrowserRouter } from "react-router-dom";
-import { getDailyCollectionIds, getDailyCollection } from '../apiCalls.js'
+import { getDailyCollectionIds, getDailyCollection, fetchByArtistOrCulture } from '../apiCalls.js'
 
+fetchByArtistOrCulture.mockResolvedValue([11922]);
 getDailyCollectionIds.mockResolvedValue([436524, 11922]);
 getDailyCollection.mockResolvedValue([
   {
@@ -58,7 +58,7 @@ describe('DailyCuration', () => {
     const { getByTestId } = render(
       <StoreProvider>
         <BrowserRouter>
-          <DailyCuration />
+          <DailyCuration page="daily-curation"/>
         </BrowserRouter>
       </StoreProvider>
     );
@@ -71,7 +71,21 @@ describe('DailyCuration', () => {
     const { getByAltText } = render(
       <StoreProvider>
         <BrowserRouter>
-          <DailyCuration />
+          <DailyCuration page="daily-curation" />
+        </BrowserRouter>
+      </StoreProvider>
+    );
+    await waitFor(() => {
+      expect(getByAltText("Sunflowers")).toBeInTheDocument()
+      expect(getByAltText("Clytie")).toBeInTheDocument()
+    })
+  })
+
+  it('should display artwork previews for the data fetched from culture-or-artist page', async () => {
+    const { getByAltText } = render(
+      <StoreProvider>
+        <BrowserRouter>
+          <DailyCuration page="culture-or-artist" />
         </BrowserRouter>
       </StoreProvider>
     );

@@ -1,7 +1,6 @@
 import React from "react";
 import { ArtWorkPreview } from "./ArtWorkPreview";
 import { render, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import { StoreProvider } from "../store";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
