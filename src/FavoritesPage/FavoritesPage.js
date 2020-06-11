@@ -2,6 +2,7 @@ import React from 'react'
 import './FavoritesPage.css'
 import { useStore } from "../store";
 import { ArtWorkPreview } from "../ArtWorkPreview/ArtWorkPreview";
+import emptyCanvas from "./empty-canvas.png";
 
 export const FavoritesPage = () => {
   const { state } = useStore();
@@ -14,7 +15,7 @@ export const FavoritesPage = () => {
           <img
             className="blank-canvas"
             alt="blank canvas symbolizing an empty favorites page"
-            src="/empty-canvas.png"
+            src="empty-canvas.png"
           />
         ) : (
           state.favorites.map((fave) => (

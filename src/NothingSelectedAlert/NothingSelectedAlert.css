@@ -1,5 +1,5 @@
 .NothingSelectedAlert {
-  width: 50%;
+  width: 80%;
   background-size: cover;
   margin: 0 auto;
   height: 300px;
@@ -8,11 +8,11 @@
 }
 
 .culture-or-artist {
-  background-image: url("/VanGogh_Background.jpg");
+  background-image: url("./VanGogh_Background.jpg");
 }
 
 .medium {
-  background-image: url("/Monet_Background.jpg");
+  background-image: url("./Monet_Background.jpg");
 }
 
 
@@ -33,10 +33,11 @@
 @media all and (min-width: 600px) {
   .NothingSelectedAlert {
     height: 500px;
+    width: 50%;
   }
 
   .NothingSelectedAlert h2 {
-  font-size: 40px;
+    font-size: 40px;
   }
 
 }

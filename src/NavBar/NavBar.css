@@ -12,7 +12,9 @@ header {
   background-color: black;
   height: 13vh;
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  min-height: 120px;
 }
 
 header a {
@@ -30,7 +32,7 @@ header a {
 
 .nav-btn-container {
   justify-content: space-between;
-  width: 25%;
+  width: 35%;
   float: right;
   display: flex;
   flex-direction: column;
