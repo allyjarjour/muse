@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Filter.css'
 import { useStore } from "../store";
+import goIcon from "./go.png"
 
 
 export const Filter = ({ page }) => {
@@ -70,7 +71,7 @@ export const Filter = ({ page }) => {
           <img
             className="search-icon"
             alt="search icon arrow"
-            src="./go.png"
+            src={goIcon}
             role="button"
             aria-pressed="false"
             tabIndex="0"

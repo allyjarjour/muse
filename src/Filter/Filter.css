@@ -1,6 +1,6 @@
 .Filter {
   margin: 50px auto 20px auto;
-  width: 40%;
+  width: 80%;
 }
 
 .Filter h1 {
@@ -40,6 +40,11 @@
   font-weight: lighter;
 }
 
+@media all and (min-width: 600px) {
+  .Filter {
+    width: 40%
+  }
+}
 
 
 

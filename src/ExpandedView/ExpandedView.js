@@ -1,12 +1,12 @@
 import React from 'react'
 import './ExpandedView.css'
 import { useStore } from "../store";
+import like from './like.png'
+import notLiked from './not-liked.png'
 
 
 export const ExpandedView = ({ artwork }) => {
   const { state, dispatch } = useStore();
-  const unFaveHeart = "/not-liked.svg"
-  const faveHeart = "/like.svg" 
 
   const toggleFavorite = () => {
     if ((state.favorites.some(fave => fave.objectID === artwork.objectID))) {
@@ -37,8 +37,8 @@ export const ExpandedView = ({ artwork }) => {
             className="heart-icon"
             src={
               state.favorites.some((fave) => fave.objectID === artwork.objectID)
-                ? faveHeart
-                : unFaveHeart
+                ? like
+                : notLiked
             }
           />
         </div>
