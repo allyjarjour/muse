@@ -10,11 +10,9 @@ Muse is an app for discovering new art by artist, culture, medium or by what is 
 - Testing: Jest and React Testing Library
 
 ### Setup
-Clone this repo
-Run npm install
-Run npm start
-Enjoy!
-This application was created using create-react-app.
+- Clone this repo
+- Run npm install
+- Run npm start
 
 ### Future iterations
 - Add in a color palette generator for the photo on expanded page
