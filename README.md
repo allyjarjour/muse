@@ -11,6 +11,9 @@ deployed: https://allyjarjour.github.io/muse/
 - React's Context API
 - Testing: Jest and React Testing Library
 
+### Wireframe
+View my wirefram on Figma here: https://www.figma.com/file/qJGr6EKPDLgajFBIpn4j10/MUSE?node-id=0%3A1
+
 ### Setup
 - Clone this repo
 - Run npm install
