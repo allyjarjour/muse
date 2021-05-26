@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3bee8db15807c4ac2f364e8476c77183",
+    "revision": "44e8181135b1094d4279cec6522a41c3",
     "url": "/muse/index.html"
   },
   {
-    "revision": "326bee74acf9ec8f1b47",
-    "url": "/muse/static/css/2.f87e9f44.chunk.css"
+    "revision": "a8f3366fbbdc2f0f372a",
+    "url": "/muse/static/css/2.1a823184.chunk.css"
   },
   {
-    "revision": "81f0bc29f8cdc878fa06",
-    "url": "/muse/static/css/main.e85a9132.chunk.css"
+    "revision": "2ada4422a4e8f7d3b598",
+    "url": "/muse/static/css/main.ce3edf93.chunk.css"
   },
   {
-    "revision": "326bee74acf9ec8f1b47",
-    "url": "/muse/static/js/2.870e6062.chunk.js"
+    "revision": "a8f3366fbbdc2f0f372a",
+    "url": "/muse/static/js/2.4b184819.chunk.js"
   },
   {
-    "revision": "8bc88370bc2489d86f2f357f447ddb0b",
-    "url": "/muse/static/js/2.870e6062.chunk.js.LICENSE.txt"
+    "revision": "ae96ce37367c3b15926eb6b17d3aa94e",
+    "url": "/muse/static/js/2.4b184819.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "81f0bc29f8cdc878fa06",
-    "url": "/muse/static/js/main.3bf6b3e2.chunk.js"
+    "revision": "2ada4422a4e8f7d3b598",
+    "url": "/muse/static/js/main.0e7d8b9f.chunk.js"
   },
   {
     "revision": "618e278be79db55d2391",
@@ -34,10 +34,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cf1ec6087a1b8a5c8ef920ae3cface63",
     "url": "/muse/static/media/VanGogh_Background.cf1ec608.jpg"
-  },
-  {
-    "revision": "a0cfc4c1d09b2148701c6428a795f20a",
-    "url": "/muse/static/media/empty-canvas.a0cfc4c1.png"
   },
   {
     "revision": "d8cdc76eee3c4a7149d89d3789cb69b7",
