@@ -33,8 +33,8 @@ export const DailyCuration = ({ page }) => {
       let data = await getDailyCollectionIds(topic);
       if (data.objectIDs) data.objectIDs = await data.objectIDs.splice(0, 50);
       dataObjects = await getDailyCollection(data.objectIDs);
-      await updateCollection(dataObjects);
-      await setIsLoading(false)
+      updateCollection(dataObjects);
+      setIsLoading(false)
     }
     if (page === "culture-or-artist") {      
       let artworkIds = await fetchByArtistOrCulture(state.cultureOrArtistQuery.search);

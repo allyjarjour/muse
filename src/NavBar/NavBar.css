@@ -4,24 +4,31 @@ header h1 {
   color: white;
   width: 20%;
   display: inline-block;
-  padding-top: 20px;
+  padding-top: 0px;
+  margin-bottom: 0px;
 }
 
 header {
-  padding: 0px 10px 10px 10px;
+  padding: 0px 15px;
   background-color: black;
-  height: 13vh;
   display: flex;
   width: 100%;
   justify-content: space-between;
-  min-height: 120px;
 }
 
 header a {
   text-decoration: none;
 }
 
+.hamburger-menu {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  align-self: center;
+}
+
 .title-container {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -44,24 +51,35 @@ header a {
   font-weight: bold;
 }
 
+.nav-btn-container.desktop {
+  display: none;
+}
+
+.ant-dropdown-link {
+  color: white;
+}
+
+.dropdown-hamburger-menu .mobile a {
+  color: black;
+}
+
 @media all and (min-width: 600px) {
   .nav-btn-container {
     justify-content: space-around;
     flex-direction: row;
     min-width: 400px;
-    margin-top: 45px;
+    align-self: flex-end;
+    margin-bottom: 10px;
   }
   header p {
     margin-right: 10px;
   }
 
-  header {
-    height: 10vh;
-    min-height: 80px;
+  .hamburger-menu {
+    display: none;
   }
 
-  header h1 {
-    padding-top: 0px;
+  .nav-btn-container.desktop {
+    display: inherit;
   }
-
 }

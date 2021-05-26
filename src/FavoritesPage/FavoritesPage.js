@@ -1,8 +1,7 @@
 import React from 'react'
 import './FavoritesPage.css'
 import { useStore } from "../store";
-import { ArtWorkPreview } from "../ArtWorkPreview/ArtWorkPreview";
-import emptyCanvas from "./empty-canvas.png";
+import { ArtWorkPreview } from "../ArtWorkPreview/ArtWorkPreview.js";
 
 export const FavoritesPage = () => {
   const { state } = useStore();

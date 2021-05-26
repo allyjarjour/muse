@@ -4,8 +4,6 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
-  overflow: scroll;
-  height: 80vh;
 }
 
 .results-message {
